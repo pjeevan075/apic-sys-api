@@ -1,0 +1,131 @@
+#%RAML 1.0
+title: foodStore
+mediaType: application/json
+description: Get your food 
+
+traits:
+  T: !include Traits/traits.raml
+uses:
+  Library: Library/library.raml
+/Fruits:
+  type:
+    Library.fruitsCollection
+
+  
+        
+/Fruits/{FruitsId}:
+  get:
+    description: Retrieves a specific food item by its ID.
+    responses:
+      200:
+        body:
+          application/json:
+              type:  !include Datatypes/foodItem.raml
+              example: !include Examples/foodItem.json
+             
+  put:
+    description:  Updates a specific food item by its ID.
+    body:
+      type: !include Datatypes/foodItem.raml
+      example: !include Examples/foodItem.json
+    responses:
+      200:
+        body:
+          type: !include Datatypes/foodItem.raml
+  patch:
+    description: Partially updates a specific food item by its ID.
+    body:
+      type: !include Datatypes/foodItem.raml
+      example: !include Examples/foodItem.json
+    responses:
+      200:
+        body:
+          type: !include Datatypes/foodItem.raml
+          example: !include Examples/foodItem.json
+  delete:
+    description: Deletes a specific food item by its ID.
+  /{id}:
+    uriParameters:
+      id:
+        type: integer
+        default: 0
+    get:
+      description: Retrieves a specific food by its ID.
+      responses:
+        200:
+          body:
+           application/json:
+             type: !include Datatypes/foodItem.raml
+             example: !include Examples/foodItem.json
+
+ 
+/Meal:
+  get:
+    description:  Retrieves a list of food items from Meal
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include Datatypes/foodItem.raml
+            example: !include Examples/foodItem2.json
+
+  post:
+    description: Creates a new category.
+    body:
+      type: !include Datatypes/foodItem2.raml
+      example: !include Examples/foodItem2.json
+    responses:
+      201:
+        body:
+          type: !include Datatypes/foodItem2.raml
+          example: !include Examples/foodItem2.json
+
+/Meal/{MealId}:
+  get:
+    description: Retrieves a specific category by its ID.
+    responses:
+      200:
+        body:
+           application/json:
+             type: !include Datatypes/foodItem2.raml
+             example: !include Examples/foodItem2.json
+           
+  put:
+    description: Updates a specific category by its ID.
+    body:
+      type: !include Datatypes/foodItem2.raml
+      example: !include Examples/foodItem2.json
+    responses:
+      200:
+        body:
+          type: !include Datatypes/foodItem2.raml
+          example: !include Examples/foodItem2.json
+  patch:
+    description: Partially updates a Meal Item by its ID.
+    body:
+      type: !include Datatypes/foodItem2.raml
+      example: !include Examples/foodItem2.json
+    responses:
+      200:
+        body:
+          type: !include Datatypes/foodItem2.raml
+          example: !include Examples/foodItem2.json
+  delete:
+    description: Delete a specific Meal item by ID.
+  /{id}:
+    uriParameters:
+      id:
+        type: integer
+        default: 0
+        
+    get:
+      queryParameters:
+        Id:
+         type: integer
+         required: true
+      responses:
+        200:
+          body:
+            application/json:
+              type:  !include Datatypes/foodItem2.raml
+              example:  !include Examples/foodItem2.json

@@ -1,0 +1,8 @@
+     {
+        "id": 101,
+        "items": ["Apple","Mango","Orange","Grape"],
+        "price": [10,15,20,25],
+        "category": "Fruit",
+        "inStock": true
+    }
+  

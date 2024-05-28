@@ -1,0 +1,31 @@
+{
+  "configs": [
+    "foodStore.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:food:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.5.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/Datatypes/foodItem.raml",
+        "api/Datatypes/foodItem2.raml",
+        "api/Examples/foodItem.json",
+        "api/Examples/foodItem2.json",
+        "api/foodStore.raml",
+        "api/Library/library.raml",
+        "api/Traits/traits.raml",
+        "foodStore.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

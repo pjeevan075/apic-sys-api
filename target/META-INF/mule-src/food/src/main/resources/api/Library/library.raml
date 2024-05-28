@@ -1,0 +1,31 @@
+#%RAML 1.0 Library
+usage:
+resourceTypes:
+  fruitsCollection:
+    get:
+     description: Retrieves a list of food items
+     queryParameters:
+      Id:
+        type: integer
+        required: true
+     responses:
+       200:
+        body:
+          application/json:
+            type: !include ../Datatypes/foodItem.raml
+            example: !include ../Examples/foodItem.json
+                      
+              
+    post:
+     description: Creates a new food item.
+     body: 
+      type: !include ../Datatypes/foodItem.raml
+      example: !include ../Examples/foodItem.json   
+        
+     responses:
+      201:
+        body:
+          type: !include ../Datatypes/foodItem.raml
+          example: !include ../Examples/foodItem.json   
+
+ 
