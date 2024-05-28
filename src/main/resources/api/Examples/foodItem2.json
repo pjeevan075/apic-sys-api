@@ -1,0 +1,8 @@
+  {
+        "id": 102,
+        "items": ["Biriyani","Pulav","Vegthali","Nonvegthali"],
+        "price": [150,120,130,200],
+        "category": "Meal",
+        "inStock": true
+  }
+  
